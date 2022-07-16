@@ -176,3 +176,15 @@ a:active {
 .projText {
     font-size: 25rem;
 }
+
+.githubLogo {
+    height: 40rem;
+    width: 40rem;
+}
+
+.projStr {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: row;
+}
