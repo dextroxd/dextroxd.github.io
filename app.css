@@ -188,3 +188,79 @@ a:active {
     justify-content: space-evenly;
     flex-direction: row;
 }
+
+#scheduleButton {
+    height: 50rem;
+    width: 100rem;
+    background-color: #272727;
+    font-size: 20rem;
+    align-items: center;
+    border: white 2rem solid;
+}
+
+#scheduleButton:hover {
+    transform: scale(1.1) perspective(0px);
+    transition: transform 1s ease-in-out;
+}
+
+.scheduler {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20rem 0rem;
+}
+
+.footer {
+    height: 300rem;
+    background-color: #272727;
+    position: relative;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.madeby {
+    position: absolute;
+    bottom: 0rem;
+    right: 0rem;
+}
+
+#madebydextroxd {
+    font-size: 20rem;
+    margin: 10rem 10rem;
+}
+
+.imageSlateItem2 {
+    height: 40rem;
+    width: 40rem;
+    text-align: center;
+    object-fit: contain;
+}
+
+.linkedintext {
+    font-size: 20rem;
+}
+
+.links {
+    height: 70rem;
+    width: 300rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.linksgroup {
+    height: 250rem;
+    width: 700rem;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.sep {
+    height: 10rem;
+    width: 10rem;
+}
