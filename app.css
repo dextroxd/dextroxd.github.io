@@ -1,0 +1,178 @@
+* {
+    font-family: 'Product Sans', Montserrat, 'Open Sans', monospace;
+    font-size: 1px;
+    color: white;
+}
+
+body {
+    background-color: black;
+}
+
+a:hover,
+a:visited,
+a:link,
+a:active {
+    text-decoration: none;
+    font-size: 20rem;
+    font-weight: bold;
+}
+
+#header>* {
+    margin: 10rem 10rem;
+}
+
+#dextroxd {
+    color: white;
+    font-weight: bold;
+    font-size: 60rem;
+}
+
+
+#ddimage {
+    width: 350rem;
+    height: 350rem;
+    border-radius: 50%;
+    text-align: center;
+    object-fit: cover;
+    margin: 10rem 10rem;
+}
+
+#ddtext {
+    font-size: 25rem;
+    margin: 10rem 10rem;
+}
+
+#firstscroll {
+    display: flex;
+    flex-direction: row;
+    margin: 60rem 10rem 0rem 10rem;
+    align-items: center;
+}
+
+.wave {
+    animation-name: wave-animation;
+    animation-duration: 2.5s;
+    animation-iteration-count: infinite;
+    transform-origin: 70% 70%;
+    display: inline-block;
+    font-size: 25rem;
+}
+
+@keyframes wave-animation {
+    0% {
+        transform: rotate(0.0deg)
+    }
+
+    10% {
+        transform: rotate(14.0deg)
+    }
+
+    20% {
+        transform: rotate(-8.0deg)
+    }
+
+    30% {
+        transform: rotate(14.0deg)
+    }
+
+    40% {
+        transform: rotate(-4.0deg)
+    }
+
+    50% {
+        transform: rotate(10.0deg)
+    }
+
+    60% {
+        transform: rotate(0.0deg)
+    }
+
+    100% {
+        transform: rotate(0.0deg)
+    }
+}
+
+.scroller {
+    font-size: 59rem;
+    margin: 110rem 0rem 0rem 0rem;
+}
+
+.companylogo {
+    width: 275rem;
+    height: 100rem;
+    text-align: center;
+    align-items: center;
+    object-fit: contain;
+}
+
+.companylogo2 {
+    width: 240rem;
+    height: 60rem;
+    margin: 10rem 10rem;
+    padding: 10rem 10rem;
+    text-align: center;
+    align-items: center;
+    object-fit: contain;
+}
+
+#mstext {
+    font-size: 25rem;
+}
+
+.companies {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.eachCompanySize {
+    width: 300rem;
+    height: 400rem;
+}
+
+.seperatorparent {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    height: 350rem;
+    width: 1rem;
+}
+
+.seperator {
+    background-color: white;
+    color: white;
+    height: 200rem;
+    width: 0.1rem;
+}
+
+.imageSlate {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+
+}
+
+.imageSlateItem {
+    height: 60rem;
+    width: 60rem;
+    text-align: center;
+    object-fit: contain;
+}
+
+.proj {
+    height: 400rem;
+    width: 400rem;
+    align-items: center;
+}
+
+.projName {
+    font-size: 30rem;
+    text-align: center;
+}
+
+.projText {
+    font-size: 25rem;
+}
