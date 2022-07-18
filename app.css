@@ -17,8 +17,20 @@ a:active {
     font-weight: bold;
 }
 
-#header>* {
+#nav-button {
+    background: none;
+    color: white;
+    font-size: 40rem;
+    display: none;
+}
+
+#dextroxd,
+#nav-items>* {
     margin: 10rem 10rem;
+}
+
+#nav-items {
+    display: inline;
 }
 
 #dextroxd {
@@ -94,7 +106,7 @@ a:active {
 
 .scroller {
     font-size: 59rem;
-    margin: 110rem 0rem 0rem 0rem;
+    text-align: center;
 }
 
 .companylogo {
@@ -119,31 +131,27 @@ a:active {
     font-size: 25rem;
 }
 
+.eachCompanySize {
+    width: 300rem;
+    height: 400rem;
+    margin: 0em 10rem;
+}
+
+.projMainClass,
 .companies {
     display: flex;
     justify-content: space-evenly;
     flex-direction: row;
     flex-wrap: wrap;
-}
-
-.eachCompanySize {
-    width: 300rem;
-    height: 400rem;
-}
-
-.seperatorparent {
     align-items: center;
-    justify-content: center;
-    display: flex;
-    height: 350rem;
-    width: 1rem;
 }
+
 
 .seperator {
     background-color: white;
     color: white;
     height: 200rem;
-    width: 0.1rem;
+    width: 2rem;
 }
 
 .imageSlate {
@@ -173,8 +181,13 @@ a:active {
     text-align: center;
 }
 
+.mentorshipText,
 .projText {
     font-size: 25rem;
+}
+
+.mentorshipText {
+    text-align: center;
 }
 
 .githubLogo {
@@ -211,7 +224,6 @@ a:active {
 }
 
 .footer {
-    height: 300rem;
     background-color: #272727;
     position: relative;
     display: flex;
@@ -242,25 +254,108 @@ a:active {
 }
 
 .links {
-    height: 70rem;
-    width: 300rem;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
+    text-align: start;
 }
 
 .linksgroup {
-    height: 250rem;
-    width: 700rem;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content: start;
+    align-items: flex-start;
 }
 
 .sep {
     height: 10rem;
     width: 10rem;
+}
+
+@media (max-width:980px) {
+    .companies div:nth-of-type(4n) {
+        display: none;
+    }
+}
+
+@media (max-width:819px) {
+    .projMainClass {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .projMainClass .seperator {
+        width: 200rem;
+        height: 2rem;
+    }
+
+    .projMainClass div {
+        margin: 10rem 0rem;
+    }
+
+    #experience,
+    #projects,
+    #mentorship {
+        text-align: center;
+    }
+}
+
+@media (max-width:932px) {
+    #firstscroll {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #ddimage {
+        width: 100%;
+        border-radius: 10%;
+        text-align: center;
+        object-fit: cover;
+        margin: 10rem 10rem;
+    }
+}
+
+@media (max-width:657px) {
+    .companies {
+        flex-direction: column;
+        justify-content: space-evenly;
+        height: auto;
+        align-items: center;
+        text-align: center;
+    }
+
+    .companies div:nth-of-type(4n) {
+        display: block;
+    }
+
+    .companies div {
+        margin: 10rem 0rem;
+    }
+
+    .companies .seperator {
+        width: 200rem;
+        height: 1rem;
+    }
+
+    .eachCompanySize {
+        height: auto;
+    }
+
+}
+
+@media (max-width:519px) {
+    .madeby {
+        position: relative;
+    }
+
+    .footer {
+        flex-direction: column;
+        justify-content: flex-start;
+        text-align: start;
+        align-items: flex-start;
+        margin: 0rem 0rem;
+    }
+
 }
