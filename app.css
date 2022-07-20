@@ -15,13 +15,40 @@ a:active {
     text-decoration: none;
     font-size: 20rem;
     font-weight: bold;
+    background-color: unset;
 }
 
-#nav-button {
-    background: none;
+.mobile-nav-toggle {
     color: white;
-    font-size: 40rem;
+    font-size: 30rem;
+    background: none;
     display: none;
+    position: absolute;
+    top: 10rem;
+    right: 10rem;
+    border: none;
+    text-align: center;
+    z-index: 1000;
+}
+
+.mobile-nav {
+    position: fixed;
+    inset: 0 0 0 30%;
+    flex-direction: column;
+    background: hsl(0 0% 0% / 0.75);
+    backdrop-filter: blur(10rem);
+    z-index: 900;
+    display: none;
+    transform: translateX(100%);
+    transition: transform 350ms ease-out;
+    flex-direction: column;
+    justify-content: space-evenly;
+    justify-items: center;
+    align-items: center;
+}
+
+.mobile-nav-items {
+    text-decoration: none;
 }
 
 #dextroxd,
@@ -107,6 +134,10 @@ a:active {
 .scroller {
     font-size: 59rem;
     text-align: center;
+}
+
+.fixed-position {
+    position: fixed;
 }
 
 .companylogo {
@@ -229,6 +260,7 @@ a:active {
     display: flex;
     justify-content: start;
     align-items: center;
+    z-index: 200;
 }
 
 .madeby {
@@ -273,6 +305,29 @@ a:active {
 .sep {
     height: 10rem;
     width: 10rem;
+}
+
+@media (max-width:1003px) {
+    #nav-items {
+        display: none;
+    }
+
+    #header {
+        justify-content: space-between;
+    }
+
+    .mobile-nav-toggle {
+        display: block;
+    }
+
+    .mobile-nav {
+        display: flex;
+    }
+
+    .mobile-nav[data-visible='true'] {
+        transform: translateX(0%);
+    }
+
 }
 
 @media (max-width:980px) {
