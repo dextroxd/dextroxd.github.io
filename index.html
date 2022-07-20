@@ -18,10 +18,27 @@
         <a href="./index.html" id="dextroxd">
             DIVYANSHU
         </a>
-        <button id="nav-button">
-            ≡
+        <button id="nav-button" class="mobile-nav-toggle" data-visible="false">
+            ☰
         </button>
-        <div id="nav-items">
+        <div class="mobile-nav" data-visible="false">
+            <a href="#" class="mobile-nav-items">
+                ABOUT
+            </a>
+            <a href="#experience" class="mobile-nav-items">
+                EXPERIENCE
+            </a>
+            <a href="#projects" class="mobile-nav-items">
+                PROJECTS
+            </a>
+            <a href="#mentorship" class="mobile-nav-items">
+                MENTORSHIP
+            </a>
+            <a href="#contactme" class="mobile-nav-items">
+                CONTACT ME
+            </a>
+        </div>
+        <div id="nav-items" class="web-nav">
             <a href="#about">
                 ABOUT
             </a>
@@ -238,6 +255,7 @@
             </div>
         </div>
     </footer>
+    <script src="./script.js"></script>
 </body>
 
 </html>
