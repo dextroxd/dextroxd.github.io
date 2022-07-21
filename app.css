@@ -20,9 +20,9 @@ a:active {
 
 .lds-ripple {
     display: inline-block;
-    position: absolute;
-    left: 50%;
-    top: 50%;
+    position: fixed;
+    inset: 0 0 0 0;
+    margin: auto;
     width: 80rem;
     height: 80rem;
     align-items: center;
