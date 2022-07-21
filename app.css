@@ -18,6 +18,63 @@ a:active {
     background: none;
 }
 
+.lds-ripple {
+    display: inline-block;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 80rem;
+    height: 80rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.lds-ripple div {
+    position: absolute;
+    border: 4rem solid #fff;
+    opacity: 1;
+    border-radius: 50%;
+    animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+
+.lds-ripple div:nth-child(2) {
+    animation-delay: -0.5s;
+}
+
+@keyframes lds-ripple {
+    0% {
+        top: 36rem;
+        left: 36rem;
+        width: 0;
+        height: 0;
+        opacity: 0;
+    }
+
+    4.9% {
+        top: 36rem;
+        left: 36rem;
+        width: 0;
+        height: 0;
+        opacity: 0;
+    }
+
+    5% {
+        top: 36rem;
+        left: 36rem;
+        width: 0;
+        height: 0;
+        opacity: 1;
+    }
+
+    100% {
+        top: 0rem;
+        left: 0rem;
+        width: 72rem;
+        height: 72rem;
+        opacity: 0;
+    }
+}
+
 .mobile-nav-toggle {
     color: white;
     font-size: 30rem;
