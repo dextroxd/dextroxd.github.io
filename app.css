@@ -479,3 +479,49 @@ a:active {
         font-size: 0.7px;
     }
 }
+
+#contact-form{
+    display: none;
+}
+
+#chat-btn{
+    height: 50px;
+    width: 50px;
+    border-radius: 50px;
+    background-color: transparent;
+    font-size: 20px;
+}
+
+#floating-action-btn{
+    position: inherit;
+    background-color: white;
+    font-size: 20px;
+    height: 50px;
+    width: 50px;
+    border-radius: 50px;
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    z-index: 1000;
+}
+
+#floating-action-btn:hover{
+    border-radius: 20px;
+    transition: 1s;
+    height: 500px;
+    width: 300px;
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    z-index: 1000;
+}
+
+#floating-action-btn:hover #chat-btn{
+    display: none;
+    transition: 1s;
+}
+
+#floating-action-btn:hover #contact-form{
+    display: block;
+    transition: 1s;
+}
