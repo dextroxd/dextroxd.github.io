@@ -65,12 +65,19 @@
         <main>
             <div id="floating-action-btn">
                 <button id="chat-btn">💬</button>
-                <form action="contact-me" id="contact-form">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" name="nameofperson" placeholder="Please enter your name">
-                    <label for="message">Message</label>
-                    <textarea id="message" name="messagefromperson" placeholder="Please enter your query with your email"></textarea>
-                    <input type="submit" value="Submit">
+                
+            </div>
+            <div>
+                <form action="contact-me" id="contact-form" name="contactform">
+                    <div>
+                        <label for="nameforquery" id="labelnameforquery">Name</label>
+                        <input type="text" id="nameforquery" name="nameofperson" placeholder="Please enter your name">
+                    </div>
+                    <div>
+                        <label for="querymessage" id="labelquery">Message</label>
+                        <textarea id="querymessage" name="messagefromperson" placeholder="Please enter your query with your email"></textarea>
+                    </div>
+                    <button id="submitquery"><img src="./Images/send-message.png" id="send-icon"></button>
                 </form>
             </div>
             <div id="firstscroll">

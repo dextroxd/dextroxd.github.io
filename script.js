@@ -3,6 +3,8 @@ const body = document.querySelector('body');
 const navMobile = document.querySelector('.mobile-nav');
 const linksInsideNav = document.querySelectorAll(".mobile-nav-items");
 const loader = document.querySelector('.lds-ripple');
+const form = document.forms['contactform'];
+const sendQueryBtn = document.querySelector('#submitquery');
 navToggle.addEventListener('click', () => {
     const visible = navToggle.getAttribute('data-visible');
     if (visible === 'false') {
@@ -36,3 +38,6 @@ document.onreadystatechange = function () {
         body.style.visibility = "visible";
     }
 };
+sendQueryBtn.addEventListener('click', (e) => {
+    
+});
