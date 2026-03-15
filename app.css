@@ -1390,6 +1390,7 @@ footer {
   :root { --space-3xl: 5rem; }
   .section { padding: var(--space-3xl) 1.25rem; }
   .nav-links { display: none; }
+  .nav-cta { display: none; }
   .nav-toggle { display: flex; }
   .mobile-overlay { display: flex; }
   .projects-grid { grid-template-columns: 1fr; }
