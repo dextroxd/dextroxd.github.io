@@ -1,286 +1,706 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="http://fonts.cdnfonts.com/css/product-sans" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-    <link href="./app.css" rel="stylesheet">
-    <title>Divyanshu</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="Divyanshu Dhawan — Software Engineer at Google. NIT Hamirpur CS dual-degree, competitive programmer, open-source contributor." />
+    <meta property="og:title" content="Divyanshu Dhawan — Software Engineer at Google" />
+    <meta property="og:description"
+        content="Building the future of distributed systems and cloud infrastructure at Google." />
+    <title>Divyanshu Dhawan — Software Engineer at Google</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@300;400;500;700&display=swap"
+        rel="stylesheet" />
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="app.css" />
 </head>
 
 <body>
-    <div class="lds-ripple">
-        <div></div>
-        <div></div>
+
+    <!-- ── Cursor Glow ─────────────────────────────────── -->
+    <div id="cursor-glow" aria-hidden="true"></div>
+
+    <!-- ── Particles Canvas ──────────────────────────── -->
+    <canvas id="bg-canvas" aria-hidden="true"></canvas>
+
+    <!-- ── Loader ────────────────────────────────────── -->
+    <div id="loader" role="progressbar" aria-label="Loading">
+        <div class="loader-ring">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
     </div>
-    <div>
-        <header id="header">
-            <a href="./index.html" id="dextroxd">
-                DIVYANSHU
-            </a>
-            <button id="nav-button" class="mobile-nav-toggle" data-visible="false">
-                ☰
+
+    <!-- ── Header / Navigation ───────────────────────── -->
+    <header id="header" role="banner">
+        <nav class="nav-container" role="navigation" aria-label="Main navigation">
+            <a href="#hero" class="nav-logo" aria-label="Home"><span class="logo-bracket">&lt;</span>dextroxd<span
+                    class="logo-bracket">/&gt;</span></a>
+
+            <ul class="nav-links">
+                <li><a href="#about" class="nav-link" data-index="01">About</a></li>
+                <li><a href="#experience" class="nav-link" data-index="02">Experience</a></li>
+                <li><a href="#projects" class="nav-link" data-index="03">Projects</a></li>
+                <li><a href="#mentorship" class="nav-link" data-index="04">Mentorship</a></li>
+                <li><a href="#contact" class="nav-link" data-index="05">Contact</a></li>
+            </ul>
+
+            <a href="https://calendly.com/divyanshu171299/30min" target="_blank" rel="noopener noreferrer" class="btn btn-primary nav-cta">Let's Talk</a>
+
+            <button id="nav-toggle" class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"
+                aria-controls="mobile-overlay">
+                <span></span><span></span><span></span>
             </button>
-            <div class="mobile-nav" data-visible="false">
-                <a href="#" class="mobile-nav-items">
-                    ABOUT
-                </a>
-                <a href="#experience" class="mobile-nav-items">
-                    EXPERIENCE
-                </a>
-                <a href="#projects" class="mobile-nav-items">
-                    PROJECTS
-                </a>
-                <a href="#mentorship" class="mobile-nav-items">
-                    MENTORSHIP
-                </a>
-                <a href="#contactme" class="mobile-nav-items">
-                    CONTACT ME
-                </a>
-            </div>
-            <div id="nav-items" class="web-nav">
-                <a href="#about">
-                    ABOUT
-                </a>
-                <a href="#experience">
-                    EXPERIENCE
-                </a>
-                <a href="#projects">
-                    PROJECTS
-                </a>
-                <a href="#mentorship">
-                    MENTORSHIP
-                </a>
-                <a href="#contactme">
-                    CONTACT ME
-                </a>
-            </div>
+        </nav>
+    </header>
 
-        </header>
-        <main>
-            <div id="floating-action-btn">
-                <button id="chat-btn">💬</button>
-                
-            </div>
-            <div>
-                <form action="contact-me" id="contact-form" name="contactform">
-                    <div>
-                        <label for="nameforquery" id="labelnameforquery">Name</label>
-                        <input type="text" id="nameforquery" name="nameofperson" placeholder="Please enter your name">
-                    </div>
-                    <div>
-                        <label for="querymessage" id="labelquery">Message</label>
-                        <textarea id="querymessage" name="messagefromperson" placeholder="Please enter your query with your email"></textarea>
-                    </div>
-                    <button id="submitquery"><img src="./Images/send-message.png" id="send-icon"></button>
-                </form>
-            </div>
-            <div id="firstscroll">
-                <div>
-                    <img src="./Images/Divyanshu.JPG" alt="Divyanshu Image" id="ddimage">
-                </div>
-                <p id="ddtext">
-                    Hey <span class="wave">👋</span>, this is Divyanshu Dhawan, I am postgraduate in Computer
-                    Science and
-                    Engineering from National Institute of Technology, Hamirpur. I ranked 2nd in batch of
-                    2017-2022.
-                    I have excellent knowledge of Data Structures and Algorithms. I have solved over 500+
-                    algorithmic
-                    problems
-                    on various coding sites like Codeforces, Codechef, Leetcode, and Geeksforgeeks.
-                    I have done internship in Amazon,Samsung and in few startups as well. I have achieved AIR 1518
-                    in
-                    GATE 2021. I led Android Club having 50+ members at National
-                    Institute of Technology, Hamirpur. Apart from this, I have a knack for Problem Solving,
-                    Mixed Reality, and Backend Development.
-                </p>
-            </div>
-            <div>
-                <h2 class="scroller" id="experience">EXPERIENCE</h2>
-                <div class="companies">
-                    <div class="eachCompanySize">
-                        <img src="./Images/MS Logo.png" alt="Microsoft Logo" class="companylogo">
-                        <div>
-                            <p id="mstext">
-                                Going to join
-                                Microsoft on
-                                22nd August 22.
-                                Palindrome Date ; )
-                            </p>
-                        </div>
-                    </div>
-                    <div class="seperator">
-                    </div>
-                    <div class="eachCompanySize">
-                        <img src="./Images/AmazonLogo.png" alt="Amazon Logo" class="companylogo2">
-                        <div>
-                            <p id="mstext">
-                                Migrated a service
-                                from AWS Lambda
-                                to AWS Glue, made the
-                                service 100% horizontally
-                                scalable, and codebase
-                                easier to maintain.
-                            </p>
-                        </div>
-                        <div class="imageSlate">
-                            <div>
-                                <img src="./Images/AWS.png" alt="AWS Logo" class="imageSlateItem">
-                            </div>
-                            <div>
-                                <img src="./Images/Pyspark logo.png" alt="Pyspark Logo" class="imageSlateItem">
-                            </div>
-                            <div>
-                                <img src="./Images/Git.png" alt="Git logo" class="imageSlateItem">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="seperator">
-                    </div>
-                    <div class="eachCompanySize">
-                        <img src="./Images/samsung.png" alt="Samsung Logo" class="companylogo2">
-                        <div>
-                            <p id="mstext">
-                                Built a Q-Learning agent
-                                and environment to improve
-                                the efficiency of 4G and 5G
-                                networks. Learned about
-                                Reinforcement Learning.
-                            </p>
-                        </div>
-                        <div class="imageSlate">
-                            <div>
-                                <img src="./Images/MachineLearning.png" alt="AWS Logo" class="imageSlateItem">
-                            </div>
-                        </div>
+    <!-- ── Mobile Overlay ────────────────────────────── -->
+    <div id="mobile-overlay" class="mobile-overlay" role="dialog" aria-modal="true" aria-label="Navigation menu">
+        <ul class="mobile-nav-links">
+            <li><a href="#about" class="mobile-nav-link"><span>01.</span>About</a></li>
+            <li><a href="#experience" class="mobile-nav-link"><span>02.</span>Experience</a></li>
+            <li><a href="#projects" class="mobile-nav-link"><span>03.</span>Projects</a></li>
+            <li><a href="#mentorship" class="mobile-nav-link"><span>04.</span>Mentorship</a></li>
+            <li><a href="#contact" class="mobile-nav-link"><span>05.</span>Contact</a></li>
+            <li><a href="https://calendly.com/divyanshu171299/30min" target="_blank" rel="noopener noreferrer" class="btn btn-primary mobile-cta">Let's Talk</a></li>
+        </ul>
+    </div>
+
+    <main>
+
+        <!-- ══════════════════════════════════════════════
+       HERO
+  ══════════════════════════════════════════════ -->
+        <section id="hero" aria-label="Hero">
+            <div class="hero-section" style="padding-left:2rem;padding-right:2rem;">
+                <!-- Content -->
+                <div class="hero-content">
+                    <p class="hero-intro fade-up delay-1">Hi, my name is</p>
+
+                    <h1 class="hero-name fade-up delay-2">
+                        Divyanshu<br>
+                        <span class="text-gradient">Dhawan.</span>
+                    </h1>
+
+                    <div class="hero-role fade-up delay-3" aria-live="polite">
+                        <span id="typewriter" class="typewriter">Software Engineer @ Google</span><span
+                            class="cursor-blink" aria-hidden="true">|</span>
                     </div>
 
-                </div>
-            </div>
-            <div>
-                <h2 class="scroller" id="projects">PROJECTS</h2>
-                <div class="projMainClass">
-                    <div class="proj">
-                        <div class="projStr">
-                            <h3 class="projName">QUAKE APP</h3>
-                            <a href="https://github.com/dextroxd/Quake_App" target=”_blank”>
-                                <img src="./Images/GithubLogo.png" alt="Github Link" class="githubLogo">
-                            </a>
-                        </div>
-                        <p class="projText">
-                            Achieved Google Create Certificate for this
-                            application. Made whole flutter app code
-                            under 5KB. Used all the basic widgets
-                            (Text,Scaffold,Container,Transform etc.),
-                            used async and await functions for http
-                            requests.
-                        </p>
-                    </div>
-                    <div class="seperator">
-                    </div>
-                    <div class="proj">
-                        <div class="projStr">
-                            <h3 class="projName">STUDENT GO</h3>
-                            <a href="https://github.com/dextroxd/StudentsGo" target=”_blank”>
-                                <img src="./Images/GithubLogo.png" alt="Github Link" class="githubLogo">
-                            </a>
-                        </div>
-                        <p class="projText">
-                            Made an android application in which I have
-                            implemented Socket.io for real-time chatting,
-                            made APIs in NodeJS and database is made
-                            in MongoDB. Implemented FAN and Volley for
-                            API fetching, implemented IBM Watson for a
-                            chat bot which gives information about
-                            college.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div>
-                <h2 class="scroller" id="mentorship">MENTORSHIP</h2>
-                <p class="mentorshipText">
-                    Schedule a 1:1 free mentorship session with me.
-                </p>
-                <div class="scheduler">
-                    <button id="scheduleButton">
-                        Schedule
-                    </button>
-                </div>
-            </div>
-        </main>
-        <footer>
-            <div class="footer">
-                <div class="linksgroup">
-                    <div class="links">
-                        <a href="https://www.linkedin.com/in/dextroxd">
-                            <img src="./Images/Linkedin-logo-transparent-PNG.png" alt="LinkedinImage"
-                                class="imageSlateItem2">
-                        </a>
-                        <div class="sep">
-
-                        </div>
-                        <p class="linkedintext"> LINKEDIN </p>
-                    </div>
-                    <div class="links">
-                        <a href="https://www.instagram.com/__dextroxd__/">
-                            <img src="./Images/Instagram.png" alt="InstagramLogo" class="imageSlateItem2">
-                        </a>
-                        <div class="sep">
-
-                        </div>
-                        <p class="linkedintext"> INSTAGRAM </p>
-                    </div>
-                    <div class="links">
-                        <a href="https://leetcode.com/dextroxd/">
-                            <img src="./Images/Leetcode.png" alt="LeetcodeImage" class="imageSlateItem2">
-                        </a>
-                        <div class="sep">
-
-                        </div>
-                        <p class="linkedintext"> LEETCODE </p>
-                    </div>
-                    <div class="links">
-                        <a href="https://codeforces.com/profile/Dextroxd">
-                            <img src="./Images/Codeforces.png" alt="CodeforcesImage" class="imageSlateItem2">
-                        </a>
-                        <div class="sep">
-
-                        </div>
-                        <p class="linkedintext"> CODEFORCES </p>
-                    </div>
-                    <div class="links">
-                        <a href="https://www.codechef.com/users/divyanshu_1712">
-                            <img src="./Images/Codechef.png" alt="CodechefImage" class="imageSlateItem2">
-                        </a>
-                        <div class="sep">
-
-                        </div>
-                        <p class="linkedintext"> CODECHEF </p>
-                    </div>
-                    <div class="links">
-                        <a href="https://auth.geeksforgeeks.org/user/divyanshudhawan/practice/">
-                            <img src="./Images/Gfg.png" alt="GeeksForGeeksImage" class="imageSlateItem2">
-                        </a>
-                        <div class="sep">
-
-                        </div>
-                        <p class="linkedintext"> GEEKSFORGEEKS </p>
-                    </div>
-                </div>
-                <div class="madeby">
-                    <p id="madebydextroxd">
-                        MADE WITH ❤️ BY DEXTROXD
+                    <p class="hero-desc fade-up delay-4">
+                        Dual-degree CS graduate from <strong>NIT Hamirpur</strong> (BTech CGPA 9.76 · MTech CGPA 9.9).
+                        Currently building resilient distributed infrastructure at
+                        <a href="https://google.com" target="_blank" rel="noopener noreferrer"
+                            class="company-link google-link">Google</a>.
+                        Previously at
+                        <a href="https://microsoft.com" target="_blank" rel="noopener noreferrer"
+                            class="company-link ms-link">Microsoft</a>
+                        &amp;
+                        <a href="https://amazon.com" target="_blank" rel="noopener noreferrer" class="company-link"
+                            style="color:#ff9900">Amazon</a>.
                     </p>
+
+                    <div class="hero-actions fade-up delay-5">
+                        <a href="#experience" class="btn btn-primary">
+                            <i class="fas fa-briefcase" aria-hidden="true"></i>
+                            View Work
+                        </a>
+                        <a href="#contact" class="btn btn-outline">
+                            <i class="fas fa-paper-plane" aria-hidden="true"></i>
+                            Get in Touch
+                        </a>
+                    </div>
+
+                    <!-- Stats -->
+                    <div class="hero-stats fade-up delay-5">
+                        <div class="stat-card">
+                            <span><span class="stat-num" data-target="500">0</span><span
+                                    class="stat-suffix">+</span></span>
+                            <span class="stat-label">Problems Solved</span>
+                        </div>
+                        <div class="stat-divider" aria-hidden="true"></div>
+                        <div class="stat-card">
+                            <span><span class="stat-num" data-target="3">0</span><span
+                                    class="stat-suffix"></span></span>
+                            <span class="stat-label">Tech Companies</span>
+                        </div>
+                        <div class="stat-divider" aria-hidden="true"></div>
+                        <div class="stat-card">
+                            <span><span class="stat-num" data-target="1518">0</span></span>
+                            <span class="stat-label">GATE AIR Rank</span>
+                        </div>
+                        <div class="stat-divider" aria-hidden="true"></div>
+                        <div class="stat-card">
+                            <span><span class="stat-num" data-target="50">0</span><span
+                                    class="stat-suffix">+</span></span>
+                            <span class="stat-label">Club Members Led</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Visual -->
+                <div class="hero-visual fade-up delay-3" aria-hidden="true">
+                    <div class="avatar-wrapper">
+                        <!-- Rings -->
+                        <div class="avatar-ring-outer"></div>
+                        <div class="avatar-ring-inner"></div>
+
+                        <!-- Avatar -->
+                        <img src="Images/Divyanshu.JPG" alt="Divyanshu Dhawan" class="avatar-img" loading="eager" />
+
+                        <!-- Google badge -->
+                        <div class="avatar-badge">
+                            <svg class="badge-logo" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path fill="#4285F4"
+                                    d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" />
+                                <path fill="#34A853"
+                                    d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" />
+                                <path fill="#FBBC05"
+                                    d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" />
+                                <path fill="#EA4335"
+                                    d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" />
+                            </svg>
+                        </div>
+                    </div>
+
+                    <!-- Floating badges -->
+                    <div class="floating-card card-1">
+                        <span class="text-accent">⌘</span>
+                        <div>
+                            <div class="card-title">500+ Problems</div>
+                            <div class="card-sub">LeetCode · Codeforces</div>
+                        </div>
+                    </div>
+                    <div class="floating-card card-2">
+                        <span class="text-gold">🏆</span>
+                        <div>
+                            <div class="card-title">GATE AIR 1518</div>
+                            <div class="card-sub">CS 2021</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Scroll hint -->
+                <div class="scroll-indicator" aria-hidden="true">
+                    <div class="scroll-line"></div>
+                    <span>scroll</span>
                 </div>
             </div>
-        </footer>
-        <script src="./script.js"></script>
+        </section>
+
+        <!-- ══════════════════════════════════════════════
+       ABOUT
+  ══════════════════════════════════════════════ -->
+        <section id="about" aria-label="About me">
+            <div class="about-section">
+                <div class="section-header reveal">
+                    <span class="section-tag">01. About Me</span>
+                    <h2 class="section-title">A Little Bit About Me</h2>
+                </div>
+
+                <div class="about-grid">
+                    <!-- Text -->
+                    <div class="about-text">
+                        <p class="reveal">
+                            Hello! I'm Divyanshu — a <strong>Software Engineer @ Google</strong>, dual-degree graduate
+                            Computer Science from <strong>NIT Hamirpur</strong>
+                            (BTech CGPA <em>9.76</em> · MTech CGPA <em>9.9</em>, <strong>Batch Rank #2</strong>).
+                        </p>
+                        <p class="reveal delay-1">
+                            At Google I work on <strong>GDC Air-Gapped infrastructure</strong> — building multi-zone
+                            Kubernetes DNS mesh, RFC-compliant webhooks,
+                            and Prometheus/Grafana SLO pipelines. I also contributed to <strong>Gemini's
+                                security</strong> horizontal (org-wide recognition).
+                        </p>
+                        <p class="reveal delay-2">
+                            Before Google I was at <strong>Microsoft</strong> (Azure SQL reliability) and
+                            <strong>Amazon</strong> (AWS Glue migrations). I'm deeply passionate
+                            about distributed systems, competitive programming, and mentoring the next generation of
+                            engineers.
+                        </p>
+
+                        <div class="skills-grid reveal delay-3">
+                            <div class="skill-category">
+                                <h4><i class="fas fa-code"></i> Languages</h4>
+                                <ul>
+                                    <li>C / C++</li>
+                                    <li>Golang</li>
+                                    <li>Java / Kotlin</li>
+                                    <li>Python</li>
+                                    <li>Dart / Flutter</li>
+                                </ul>
+                            </div>
+                            <div class="skill-category">
+                                <h4><i class="fas fa-cloud"></i> Cloud &amp; Infra</h4>
+                                <ul>
+                                    <li>Kubernetes</li>
+                                    <li>Prometheus / Grafana</li>
+                                    <li>Azure / AWS GCP</li>
+                                    <li>KQL / Grafana</li>
+                                    <li>Docker</li>
+                                </ul>
+                            </div>
+                            <div class="skill-category">
+                                <h4><i class="fas fa-mobile-alt"></i> Mobile / Web</h4>
+                                <ul>
+                                    <li>Flutter / Dart</li>
+                                    <li>Android (Java)</li>
+                                    <li>Node.js</li>
+                                    <li>Socket.io</li>
+                                    <li>MongoDB</li>
+                                </ul>
+                            </div>
+                            <div class="skill-category">
+                                <h4><i class="fas fa-brain"></i> CS Concepts</h4>
+                                <ul>
+                                    <li>Distributed Systems</li>
+                                    <li>System Design</li>
+                                    <li>DSA / Competitive</li>
+                                    <li>OS / Networking</li>
+                                    <li>Machine Learning</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Image -->
+                    <div class="about-image-wrapper reveal delay-2">
+                        <div class="about-image-frame">
+                            <img src="Images/Divyanshu.JPG" alt="Divyanshu Dhawan" class="about-img" loading="lazy" />
+                        </div>
+                        <div class="image-accent-1" aria-hidden="true"></div>
+                        <div class="image-accent-2" aria-hidden="true"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ══════════════════════════════════════════════
+       EXPERIENCE
+  ══════════════════════════════════════════════ -->
+        <section id="experience" aria-label="Experience">
+            <div class="experience-section">
+                <div class="section-header reveal">
+                    <span class="section-tag">02. Experience</span>
+                    <h2 class="section-title">Where I've Worked</h2>
+                </div>
+
+                <div class="timeline">
+
+                    <!-- ── Google ──────────────────────── -->
+                    <article class="timeline-item reveal">
+                        <div class="timeline-dot">
+                            <div class="dot-pulse"></div>
+                        </div>
+                        <div class="glass-card timeline-card">
+                            <div class="timeline-card-header">
+                                <div class="company-logo-icon">
+                                    <span class="google-icon">
+                                        <svg width="28" height="28" viewBox="0 0 24 24"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path fill="#4285F4"
+                                                d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" />
+                                            <path fill="#34A853"
+                                                d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" />
+                                            <path fill="#FBBC05"
+                                                d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" />
+                                            <path fill="#EA4335"
+                                                d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" />
+                                        </svg>
+                                    </span>
+                                </div>
+                                <div>
+                                    <div class="job-title">Software Engineer</div>
+                                    <div class="company-name">Google · Bengaluru, India</div>
+                                </div>
+                                <span class="job-date">Sep&nbsp;2024 – Present</span>
+                            </div>
+
+                            <ul class="job-bullets">
+                                <li><strong>GDC Air-Gapped DNS:</strong> Designed a multizone mesh for cross-zone DNS
+                                    resolution, enabling Kubernetes clusters across zones to communicate — built Custom
+                                    Resources &amp; reconcilers in <em>Golang</em>.</li>
+                                <li>Standardized DNS entries with <strong>RFC 2181</strong> compliance using validating
+                                    webhooks.</li>
+                                <li>Automated <strong>E2E tests</strong> reducing on-call issues by <em>64%</em>;
+                                    implemented SLO dashboards with <em>Prometheus &amp; Grafana</em> for multiple DNS
+                                    components.</li>
+                                <li><strong>Gemini GDC Air-Gapped security horizontal</strong> — contributions
+                                    recognised org-wide.</li>
+                                <li><strong>SBOM parallel query optimization</strong> — achieved significant build-time
+                                    reduction, recognised org-wide.</li>
+                            </ul>
+
+                            <div class="job-tags">
+                                <span class="tag">Golang</span>
+                                <span class="tag">Kubernetes</span>
+                                <span class="tag">Prometheus</span>
+                                <span class="tag">Grafana</span>
+                                <span class="tag">GDC Air-Gapped</span>
+                                <span class="tag">DNS</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- ── Microsoft ────────────────────── -->
+                    <article class="timeline-item reveal delay-1">
+                        <div class="timeline-dot">
+                            <div class="dot-pulse"></div>
+                        </div>
+                        <div class="glass-card timeline-card">
+                            <div class="timeline-card-header">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg"
+                                    alt="Microsoft" class="company-logo ms-logo" />
+                                <div>
+                                    <div class="job-title">Software Engineer II</div>
+                                    <div class="company-name">Microsoft · Bengaluru, India</div>
+                                </div>
+                                <span class="job-date">Aug&nbsp;2022 – Sep&nbsp;2024</span>
+                            </div>
+
+                            <ul class="job-bullets">
+                                <li><strong>Live migration support for SQL VMs</strong> — reduced planned maintenance
+                                    time by <em>91.67%</em>; reduced customer impact by <em>3%</em> per period.</li>
+                                <li>Resolved <strong>50+ Sev-1 / Sev-2</strong> critical customer incidents end-to-end
+                                    across global Azure regions.</li>
+                                <li>Developed features using <strong>C++ &amp; WINAPIs</strong>; built <em>KQL</em>
+                                    dashboards for telemetry &amp; incident monitoring.</li>
+                            </ul>
+
+                            <div class="job-tags">
+                                <span class="tag">C++</span>
+                                <span class="tag">WINAPIs</span>
+                                <span class="tag">Azure</span>
+                                <span class="tag">KQL</span>
+                                <span class="tag">SQL VM</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- ── Amazon ──────────────────────── -->
+                    <article class="timeline-item reveal delay-2">
+                        <div class="timeline-dot">
+                            <div class="dot-pulse"></div>
+                        </div>
+                        <div class="glass-card timeline-card">
+                            <div class="timeline-card-header">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg"
+                                    alt="Amazon" class="company-logo amazon-logo" />
+                                <div>
+                                    <div class="job-title">SDE Intern</div>
+                                    <div class="company-name">Amazon · Bengaluru, India</div>
+                                </div>
+                                <span class="job-date">Jan&nbsp;2022 – Jun&nbsp;2022</span>
+                            </div>
+
+                            <ul class="job-bullets">
+                                <li>Migrated ETL pipeline from <strong>AWS Lambda to AWS Glue</strong> — enabled
+                                    <em>100% scalability improvement</em> and eliminated memory constraints.
+                                </li>
+                                <li>Built <em>PySpark</em> jobs for large-scale data processing with
+                                    <strong>DynamoDB</strong> as the data store.
+                                </li>
+                            </ul>
+
+                            <div class="job-tags">
+                                <span class="tag">PySpark</span>
+                                <span class="tag">AWS Glue</span>
+                                <span class="tag">AWS Lambda</span>
+                                <span class="tag">DynamoDB</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- ── Samsung ─────────────────────── -->
+                    <article class="timeline-item reveal delay-3">
+                        <div class="timeline-dot">
+                            <div class="dot-pulse"></div>
+                        </div>
+                        <div class="glass-card timeline-card">
+                            <div class="timeline-card-header">
+                                <img src="https://cdn.simpleicons.org/samsung/white"
+                                    alt="Samsung" class="company-logo samsung-logo" style="padding: 10px;" />
+                                <div>
+                                    <div class="job-title">Research Intern</div>
+                                    <div class="company-name">Samsung R&amp;D · Bengaluru, India</div>
+                                </div>
+                                <span class="job-date">May&nbsp;2021 – Jul&nbsp;2021</span>
+                            </div>
+
+                            <ul class="job-bullets">
+                                <li>Developed a <strong>Q-Learning agent</strong> to dynamically optimize handover
+                                    decisions in <em>4G/5G heterogeneous networks</em>, improving overall network
+                                    efficiency.</li>
+                            </ul>
+
+                            <div class="job-tags">
+                                <span class="tag">Q-Learning</span>
+                                <span class="tag">Python</span>
+                                <span class="tag">5G/4G</span>
+                                <span class="tag">Reinforcement Learning</span>
+                            </div>
+                        </div>
+                    </article>
+
+                </div><!-- /timeline -->
+            </div>
+        </section>
+
+        <!-- ══════════════════════════════════════════════
+       PROJECTS
+  ══════════════════════════════════════════════ -->
+        <section id="projects" aria-label="Projects">
+            <div class="projects-section">
+                <div class="section-header reveal">
+                    <span class="section-tag">03. Projects</span>
+                    <h2 class="section-title">Things I've Built</h2>
+                </div>
+
+                <div class="projects-grid">
+
+                    <!-- Student Go -->
+                    <article class="glass-card project-card reveal delay-1">
+                        <div class="project-card-top">
+                            <span class="project-icon" aria-hidden="true"><i class="fas fa-folder-open"></i></span>
+                            <div class="project-links">
+                                <a href="https://github.com/dextroxd" target="_blank" rel="noopener noreferrer"
+                                    aria-label="GitHub">
+                                    <svg class="gh-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                        <path
+                                            d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                        <h3 class="project-name">Student Go</h3>
+                        <p class="project-desc">Full-stack Android platform with <strong>real-time chat</strong>
+                            (Socket.io), Node.js/MongoDB backend, IBM Watson chatbot integration, FAN + Volley
+                            networking. Built as a campus super-app.</p>
+                        <div class="project-tags">
+                            <span class="tag">Java</span>
+                            <span class="tag">Node.js</span>
+                            <span class="tag">MongoDB</span>
+                            <span class="tag">Socket.io</span>
+                            <span class="tag">IBM Watson</span>
+                        </div>
+                    </article>
+
+                    <!-- Quake App -->
+                    <article class="glass-card project-card featured-project reveal delay-2">
+                        <div class="project-card-top">
+                            <span class="project-icon" aria-hidden="true" style="color:var(--color-gold)"><i
+                                    class="fas fa-star"></i></span>
+                            <div class="project-links">
+                                <a href="https://github.com/dextroxd" target="_blank" rel="noopener noreferrer"
+                                    aria-label="GitHub">
+                                    <svg class="gh-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                        <path
+                                            d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                        <h3 class="project-name">Quake App</h3>
+                        <p class="project-desc"><strong>Flutter earthquake tracker</strong> — <em>Google Create
+                                Certificate</em> winner. Complete async HTTP client, rich widget composition, real-time
+                            seismic data visualization. Featured project.</p>
+                        <div class="project-tags">
+                            <span class="tag">Flutter</span>
+                            <span class="tag">Dart</span>
+                            <span class="tag">REST API</span>
+                            <span class="tag">Google Certified</span>
+                        </div>
+                        <a href="https://github.com/dextroxd" target="_blank" rel="noopener noreferrer"
+                            class="btn btn-outline project-cta">
+                            <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+                            View Project
+                        </a>
+                    </article>
+
+                    <!-- More on GitHub -->
+                    <article class="glass-card project-card reveal delay-3">
+                        <div class="project-card-top">
+                            <span class="project-icon" aria-hidden="true" style="color:var(--color-accent-2)"><i
+                                    class="fab fa-github"></i></span>
+                        </div>
+                        <h3 class="project-name">More on GitHub</h3>
+                        <p class="project-desc">Open-source repositories, DSA solutions, <strong>competitive
+                                programming</strong> archives, and experimental side projects. 500+ problems across
+                            LeetCode &amp; Codeforces.</p>
+                        <div class="project-tags">
+                            <span class="tag">Open Source</span>
+                            <span class="tag">DSA</span>
+                            <span class="tag">Competitive</span>
+                        </div>
+                        <a href="https://github.com/dextroxd" target="_blank" rel="noopener noreferrer"
+                            class="btn btn-ghost project-cta">
+                            <i class="fab fa-github" aria-hidden="true"></i>
+                            github.com/dextroxd
+                        </a>
+                    </article>
+
+                </div><!-- /projects-grid -->
+            </div>
+        </section>
+
+        <!-- ══════════════════════════════════════════════
+       MENTORSHIP
+  ══════════════════════════════════════════════ -->
+        <section id="mentorship" aria-label="Mentorship">
+            <div class="mentorship-section">
+                <div class="section-header reveal">
+                    <span class="section-tag">04. Mentorship</span>
+                    <h2 class="section-title">Giving Back</h2>
+                </div>
+
+                <div class="mentorship-container">
+                    <!-- Card -->
+                    <div class="glass-card mentorship-card reveal">
+                        <div class="mentorship-icon-wrap"><i class="fas fa-users" aria-hidden="true"></i></div>
+                        <h3>1:1 Mentorship</h3>
+                        <p>
+                            I offer free 1:1 mentorship sessions for students and early-career engineers. We can discuss interview prep, resume reviews, or deep dive into technical topics.
+                        </p>
+                        <ul class="mentorship-topics">
+                            <li><i class="fas fa-check-circle" aria-hidden="true"></i> Data Structures &amp; Algorithms</li>
+                            <li><i class="fas fa-check-circle" aria-hidden="true"></i> System Design</li>
+                            <li><i class="fas fa-check-circle" aria-hidden="true"></i> Backend Engineering</li>
+                            <li><i class="fas fa-check-circle" aria-hidden="true"></i> Distributed System Design</li>
+                        </ul>
+                        <a href="https://calendly.com/divyanshu171299/30min" target="_blank" rel="noopener noreferrer"
+                            class="btn btn-primary">
+                            <i class="far fa-calendar-alt" aria-hidden="true"></i>
+                            Book a 30-min Session
+                        </a>
+                    </div>
+
+                    <!-- Stats grid -->
+                    <div class="mentorship-stats-grid reveal delay-2">
+                        <div class="glass-card m-stat">
+                            <i class="fas fa-users" aria-hidden="true"></i>
+                            <span>50+</span>
+                            <p>Active Members</p>
+                        </div>
+                        <div class="glass-card m-stat">
+                            <i class="fas fa-trophy" aria-hidden="true"></i>
+                            <span>#2</span>
+                            <p>Batch Rank MTech</p>
+                        </div>
+                        <div class="glass-card m-stat">
+                            <i class="fas fa-code" aria-hidden="true"></i>
+                            <span>500+</span>
+                            <p>Problems Solved</p>
+                        </div>
+                        <div class="glass-card m-stat">
+                            <i class="fab fa-google" aria-hidden="true" style="color:var(--color-google)"></i>
+                            <span
+                                style="background:linear-gradient(135deg,#4285f4,#34a853,#fbbc05,#ea4335);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">Google</span>
+                            <p>Current Employer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ══════════════════════════════════════════════
+       CONTACT
+  ══════════════════════════════════════════════ -->
+        <section id="contact" aria-label="Contact">
+            <div class="contact-section">
+                <div class="section-header reveal" style="text-align:center">
+                    <span class="section-tag">05. What's Next?</span>
+                    <h2 class="section-title">Get In Touch</h2>
+                </div>
+
+                <div class="contact-wrapper">
+                    <div class="contact-text reveal delay-1">
+                        <p>
+                            Whether you have a question, a project idea, or just want to say hi — my inbox is always
+                            open.
+                            I'm also available for mentorship, talks, and collaborations.
+                        </p>
+                    </div>
+
+                    <div class="contact-info-row reveal delay-2">
+                        <a href="mailto:divyanshu171299@gmail.com" class="contact-info-item">
+                            <i class="fas fa-envelope" aria-hidden="true"></i>
+                            divyanshu171299@gmail.com
+                        </a>
+                    </div>
+
+                    <div class="contact-links reveal delay-3">
+                        <a href="https://linkedin.com/in/dextroxd" target="_blank" rel="noopener noreferrer"
+                            class="contact-social-link">
+                            <i class="fab fa-linkedin" aria-hidden="true"></i>
+                            LinkedIn
+                        </a>
+                        <a href="https://github.com/dextroxd" target="_blank" rel="noopener noreferrer"
+                            class="contact-social-link">
+                            <i class="fab fa-github" aria-hidden="true"></i>
+                            GitHub
+                        </a>
+                        <a href="https://leetcode.com/dextroxd" target="_blank" rel="noopener noreferrer"
+                            class="contact-social-link">
+                            <i class="fas fa-code" aria-hidden="true"></i>
+                            LeetCode
+                        </a>
+                    </div>
+
+                    <a href="mailto:divyanshu171299@gmail.com" class="btn btn-primary contact-cta reveal delay-4">
+                        <i class="fas fa-paper-plane" aria-hidden="true"></i>
+                        Say Hello
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ── Footer ─────────────────────────────────── -->
+    <footer role="contentinfo">
+        <div class="footer-inner">
+            <div class="footer-social" aria-label="Social links">
+                <a href="https://github.com/dextroxd" target="_blank" rel="noopener noreferrer" class="social-icon"
+                    aria-label="GitHub">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt=""
+                        aria-hidden="true" />
+                </a>
+                <a href="https://linkedin.com/in/dextroxd" target="_blank" rel="noopener noreferrer" class="social-icon"
+                    aria-label="LinkedIn">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt=""
+                        aria-hidden="true" />
+                </a>
+                <a href="https://leetcode.com/dextroxd" target="_blank" rel="noopener noreferrer" class="social-icon"
+                    aria-label="LeetCode">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/LeetCode_logo_black.png" alt=""
+                        aria-hidden="true" />
+                </a>
+                <a href="https://codeforces.com/profile/dextroxd" target="_blank" rel="noopener noreferrer"
+                    class="social-icon" aria-label="Codeforces">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/codeforces/codeforces-original.svg"
+                        alt="" aria-hidden="true" />
+                </a>
+            </div>
+            <p class="footer-credit">
+                Designed &amp; Built by <span class="text-accent">Divyanshu Dhawan</span> with <span
+                    class="heart">♥</span>
+            </p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 
 </html>
