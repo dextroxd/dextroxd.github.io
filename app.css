@@ -240,6 +240,12 @@ button { cursor: pointer; font-family: var(--font-sans); border: none; }
   letter-spacing: 0.02em;
 }
 
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
 /* Hamburger */
 .nav-toggle {
   display: none;
@@ -1389,9 +1395,10 @@ footer {
 @media (max-width: 768px) {
   :root { --space-3xl: 5rem; }
   .section { padding: var(--space-3xl) 1.25rem; }
+  .nav-container { padding: 0 1.25rem; gap: 1rem; }
   .nav-links { display: none; }
-  .nav-cta { display: none; }
-  .nav-toggle { display: flex; }
+  .nav-cta { padding: 0.5rem 1rem; font-size: 0.75rem; border-width: 1.5px; }
+  .nav-toggle { display: flex; padding: 4px; }
   .mobile-overlay { display: flex; }
   .projects-grid { grid-template-columns: 1fr; }
   .skills-grid { grid-template-columns: 1fr; }
